@@ -1,3 +1,5 @@
+import { query } from "../db/index.js";
+
 // Get all events from DB
 export async function getAllEvents() {
   const result = await query(`
@@ -7,52 +9,53 @@ export async function getAllEvents() {
 }
 
 // Getting the users events - not working?
-export async function getEventsByUser(username) {
+export async function getEventsByUser(userName) {
   const result = await query(
     `
         SELECT * FROM events
-        WHERE username ILIKE  $1
+        WHERE organiser ILIKE  $1
         ORDER BY postDate DESC;
     `,
-    [username]
+    [userName]
   );
   return result.rows;
 }
 
 // Get events by user id
-export async function getAllEventsById(userId) {
+export async function getEventsByName(eventName) {
   const result = await query(
     `
     SELECT * FROM events
-    WHERE post_id = $1
-    ORDER BY postDate;`,
-    [userId]
+    WHERE eventName = $1
+    ORDER BY date;`,
+    [eventName]
   );
   return result.rows;
 }
 
 // ************** Create Event **************************************
-export async function createEvent(req) {
-  console.log(req);
+export async function createEvent(request) {
+  console.log(request);
 
   const result = await query(
     `
         INSERT INTO events 
-        (organiser, eventName, img, locLon, locLat, data, time, description, contact, rating)
+        (organiser, eventName, img, locLon, locLat, locName, date, time, description, contact, rating, postDate)
         VALUES 
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, CURRENT_TIMESTAMP ) 
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, CURRENT_TIMESTAMP ) 
         RETURNING *;`,
     [
-      req.body.organiser,
-      req.body.eventName,
-      req.body.img,
-      req.body.locLon,
-      req.body.locLat,
-      req.body.date,
-      req.body.time,
-      req.body.description,
-      req.body.contact,
-      req.body.rating,
+      request.organiser,
+      request.eventName,
+      request.img,
+      request.locLon,
+      request.locLat,
+      request.locName,
+      request.date,
+      request.time,
+      request.description,
+      request.contact,
+      request.rating,
     ]
   );
   return result.rows;
