@@ -1,4 +1,5 @@
-// import eventsLib from ./eventsLib
+import eventsLib from "../libs/eventsLib.js";
+import { query } from "../index.js";
 
 //*********************** Populate Events Table ***********************//
 async function populateEventsTable(eventArray) {
@@ -18,7 +19,7 @@ async function populateEventsTable(eventArray) {
       eventArray[i].contact,
       eventArray[i].rating]);
   }
-  console.log(res.rows[0].note)
+  console.log("Table has been populated")
 };
 
 await populateEventsTable(eventsLib);

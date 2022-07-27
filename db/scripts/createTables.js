@@ -1,3 +1,5 @@
+import { query } from "../index.js";
+
 //*********************** Events Table ***********************//
 
 const createEventsTableSqlString = `
@@ -9,13 +11,12 @@ const createEventsTableSqlString = `
         locLon INT NOT NULL,
         locLat INT NOT NULL,
         locName TEXT,
-        time TEXT,
+        time DATE,
         description TEXT,
         contact TEXT,
         rating INT,
-        postDate TIMESTAMP, 
-        );
-`;
+        postDate TIMESTAMP 
+        );`;
 
 async function createEventsTable() {
   const res = await query(createEventsTableSqlString);
