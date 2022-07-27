@@ -1,3 +1,5 @@
+import { query } from "../index.js";
+
 async function dropTables() {
   const res = await query(`
         DROP TABLE IF EXISTS events;
