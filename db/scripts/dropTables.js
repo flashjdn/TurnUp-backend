@@ -2,9 +2,9 @@ import { query } from "../index.js";
 
 async function dropTables() {
   const res = await query(`
-        DROP TABLE IF EXISTS events;
+        DROP TABLE IF EXISTS events, users;
         `);
-  console.log(`${res.command}  events table deleted from database.`);
+  console.log(`${res.command}  all tables deleted from database.`);
 }
 
 dropTables();
