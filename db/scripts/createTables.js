@@ -22,13 +22,13 @@ const createEventsTableSqlString = `
 async function createEventsTable() {
   const res = await query(createEventsTableSqlString);
   console.log(`${res.command} Created new table named events`);
-};
+}
 
 //*********************** Users Table ***********************//
 
 const createUsersTableSqlString = `
     CREATE TABLE IF NOT EXISTS users(
-        userId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        userId INT GENERATED ALWAYS AS IDENTITY,
         userName TEXT,
         email TEXT,
         locLon DECIMAL(8,6),
@@ -39,30 +39,28 @@ const createUsersTableSqlString = `
 async function createUsersTable() {
   const res = await query(createUsersTableSqlString);
   console.log(`${res.command} Created new table named users`);
-};
+}
 
 //*********************** Comments Table ***********************//
 
 const createCommentsTableSqlString = `
     CREATE TABLE IF NOT EXISTS comments(
-        commentId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        commentId INT GENERATED ALWAYS AS IDENTITY,
         userName TEXT,
         text TEXT,
-        postDate TIMESTAMP,
-        FOREIGN KEY (userName)
-        REFERENCES users(userName)
+        postDate TIMESTAMP
         );`;
 
 async function createCommentsTable() {
   const res = await query(createCommentsTableSqlString);
   console.log(`${res.command} Created new table named comments`);
-};
+}
 
 //*********************** User Events Table ***********************//
 
 const createUserEventsTableSqlString = `
     CREATE TABLE IF NOT EXISTS userEvents(
-        userEventsId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        userEventsId INT GENERATED ALWAYS AS IDENTITY,
         userName TEXT,
         eventName TEXT         
         );`;
@@ -70,13 +68,13 @@ const createUserEventsTableSqlString = `
 async function createUserEventsTable() {
   const res = await query(createUserEventsTableSqlString);
   console.log(`${res.command} Created new table named User Events`);
-};
+}
 
 //*********************** Event Tags Table ***********************//
 
 const createEventTagsTableSqlString = `
     CREATE TABLE IF NOT EXISTS eventTags(
-        eventTagId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        eventTagId INT GENERATED ALWAYS AS IDENTITY,
         tagName TEXT,
         eventName TEXT         
         );`;
@@ -84,34 +82,34 @@ const createEventTagsTableSqlString = `
 async function createEventTagsTable() {
   const res = await query(createEventTagsTableSqlString);
   console.log(`${res.command} Created new table named Event tags`);
-};
+}
 
 //*********************** Tags Table ***********************//
 
 const createTagsTableSqlString = `
     CREATE TABLE IF NOT EXISTS tags(
-        tagsId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        tagsId INT GENERATED ALWAYS AS IDENTITY,
         tagName TEXT        
         );`;
 
 async function createTagsTable() {
   const res = await query(createTagsTableSqlString);
   console.log(`${res.command} Created new table named tags`);
-};
+}
 
 //*********************** User Friends Table ***********************//
 
 const createUserFriendsTableSqlString = `
     CREATE TABLE IF NOT EXISTS userFriends(
-        userFriendsId INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        userFriendsId INT GENERATED ALWAYS AS IDENTITY,
         friend1 TEXT,
-        friend2        
+        friend2 TEXT       
         );`;
 
 async function createUserFriendsTable() {
   const res = await query(createUserFriendsTableSqlString);
   console.log(`${res.command} Created new table named user friends`);
-};
+}
 
 await createEventsTable();
 await createUsersTable();
