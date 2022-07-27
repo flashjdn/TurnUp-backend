@@ -1,5 +1,4 @@
-
-// Get all events from DB
+/*// Get all events from DB
 export async function getAllEvents() {
   const result = await query(`
     SELECT * FROM events
@@ -63,7 +62,4 @@ export async function deleteEvent(eventId) {
     return `No post found with ID: ${eventId}`;
   }
   return result.command;
-};
-
-
-
+};*/
