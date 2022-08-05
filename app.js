@@ -18,6 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.listen(process.env.PORT);
 
+
 app.use("/events", eventsRouter);
 
 app.use(function (req, res, next) {
