@@ -10,6 +10,7 @@ const createEventsTableSqlString = `
         mainDescription TEXT,
         eventImg TEXT,
         eventTime TEXT,
+        eventDate DATE,
         rating INT,
         organiser TEXT,
         email TEXT,
