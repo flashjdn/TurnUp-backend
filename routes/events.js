@@ -10,10 +10,10 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  res.json({ message: "I wish we had some information to give you ☹️" });
+  res.json({ message: "you have reached the events endpoint" });
 });
 
-router.get("/", async function (req, res) {
+router.get("/all", async function (req, res) {
   let data = await getAllEvents();
   const responseObject = {
     success: true,
@@ -57,5 +57,5 @@ router.patch("/:id", async function (req, res) {
   };
   res.json(responseObject);
 });
-//export default commentsRouter;
-export default router;
+
+export  {router as eventsRouter};
