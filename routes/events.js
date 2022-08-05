@@ -13,7 +13,7 @@ router.get("/", function (req, res, next) {
   res.json({ message: "I wish we had some information to give you ☹️" });
 });
 
-router.get("/allevents", async function (req, res) {
+router.get("/", async function (req, res) {
   let data = await getAllEvents();
   const responseObject = {
     success: true,
