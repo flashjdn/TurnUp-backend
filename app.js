@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import logger from "morgan";
 
-import router from "./routes/events.js";
+import { eventsRouter } from "./routes/events.js";
 
 const app = express();
 
@@ -16,9 +16,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.listen(process.env.PORT);
+// app.listen(process.env.PORT);
 
-app.use("/events", router);
+
+app.use("/events", eventsRouter);
 
 app.use(function (req, res, next) {
   res

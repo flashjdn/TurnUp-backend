@@ -3,8 +3,8 @@ import { query } from "../db/index.js";
 // Get all events from DB
 export async function getAllEvents() {
   const result = await query(`
-    SELECT * FROM events
-    ORDER BY date`); // add post date to event
+    SELECT * FROM events ORDER BY eventDate
+    `);
   return result.rows;
 }
 
