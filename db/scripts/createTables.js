@@ -5,16 +5,17 @@ import { query } from "../index.js";
 const createEventsTableSqlString = `
     CREATE TABLE IF NOT EXISTS events(
         eventId INT GENERATED ALWAYS AS IDENTITY,
-        organiser TEXT,
+        organiser INT,
         eventName TEXT,
         img TEXT,
         locLon DECIMAL(8,6),
         locLat DECIMAL(9,6),
         locName TEXT,
         date DATE,
-        time TEXT,
-        description TEXT,
-        contact TEXT,
+        time TIME,
+        eventDescription TEXT,
+        mainDescription TEXT,
+        email TEXT,
         rating INT,
         postDate TIMESTAMP 
         );`;
@@ -61,8 +62,8 @@ async function createCommentsTable() {
 const createUserEventsTableSqlString = `
     CREATE TABLE IF NOT EXISTS userEvents(
         userEventsId INT GENERATED ALWAYS AS IDENTITY,
-        userName TEXT,
-        eventName TEXT         
+        userId INT,
+        eventId INT         
         );`;
 
 async function createUserEventsTable() {
@@ -76,7 +77,7 @@ const createEventTagsTableSqlString = `
     CREATE TABLE IF NOT EXISTS eventTags(
         eventTagId INT GENERATED ALWAYS AS IDENTITY,
         tagName TEXT,
-        eventName TEXT         
+        eventId INT         
         );`;
 
 async function createEventTagsTable() {
@@ -89,7 +90,7 @@ async function createEventTagsTable() {
 const createTagsTableSqlString = `
     CREATE TABLE IF NOT EXISTS tags(
         tagsId INT GENERATED ALWAYS AS IDENTITY,
-        tagName TEXT        
+        tagId INT        
         );`;
 
 async function createTagsTable() {
@@ -102,8 +103,8 @@ async function createTagsTable() {
 const createUserFriendsTableSqlString = `
     CREATE TABLE IF NOT EXISTS userFriends(
         userFriendsId INT GENERATED ALWAYS AS IDENTITY,
-        friend1 TEXT,
-        friend2 TEXT       
+        friend1 INT,
+        friend2 INT       
         );`;
 
 async function createUserFriendsTable() {

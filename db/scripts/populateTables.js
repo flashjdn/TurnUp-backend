@@ -12,9 +12,9 @@ async function populateEventsTable(eventArray) {
   for (let i = 0; i < eventArray.length; i++) {
     const res = await query(
       `
-        INSERT INTO events (organiser, eventName, img, locLon, locLat, locName, date, time, description, contact, rating, postDate)
+        INSERT INTO events (organiser, eventName, img, locLon, locLat, locName, date, time, eventDescription, mainDescription, email, rating, postDate)
         VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, CURRENT_TIMESTAMP) RETURNING *;
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12 CURRENT_TIMESTAMP) RETURNING *;
     `,
       [
         eventArray[i].organiser,
@@ -25,8 +25,9 @@ async function populateEventsTable(eventArray) {
         eventArray[i].locName,
         eventArray[i].date,
         eventArray[i].time,
-        eventArray[i].description,
-        eventArray[i].contact,
+        eventArray[i].eventDescription,
+        eventArray[i].mainDescription,
+        eventArray[i].email,
         eventArray[i].rating,
       ]
     );
@@ -82,11 +83,11 @@ async function populateUserEventsTable(userEventsArray) {
   for (let i = 0; i < userEventsArray.length; i++) {
     const res = await query(
       `
-        INSERT INTO userEvents (userName, eventName)
+        INSERT INTO userEvents (userId, eventId)
         VALUES
         ($1, $2) RETURNING *;
     `,
-      [userEventsArray[i].userName, userEventsArray[i].eventName]
+      [userEventsArray[i].userId, userEventsArray[i].eventId]
     );
     console.log(res);
   }
@@ -98,11 +99,11 @@ async function populateEventTagsTable(eventTagsArray) {
   for (let i = 0; i < eventTagsArray.length; i++) {
     const res = await query(
       `
-        INSERT INTO eventTags (tagName, eventName)
+        INSERT INTO eventTags (tagId, eventId)
         VALUES
         ($1, $2) RETURNING *;
     `,
-      [eventTagsArray[i].tagName, eventTagsArray[i].eventName]
+      [eventTagsArray[i].tagId, eventTagsArray[i].eventId]
     );
     console.log(res);
   }
