@@ -5,18 +5,18 @@ import { query } from "../index.js";
 const createEventsTableSqlString = `
     CREATE TABLE IF NOT EXISTS events(
         eventId INT GENERATED ALWAYS AS IDENTITY,
+       models-update
+        organiser INT,
         eventName TEXT,
+        img TEXT,
+        locLon DECIMAL(8,6),
+        locLat DECIMAL(9,6),
+        locName TEXT,
+        date DATE,
+        time TIME,
         eventDescription TEXT,
         mainDescription TEXT,
-        eventImg TEXT,
-        eventTime TEXT,
-        eventDate DATE,
-        rating INT,
-        organiser TEXT,
         email TEXT,
-        address TEXT,
-        lat DECIMAL(8,6),
-        lng DECIMAL(9,6)
         );`;
 
 async function createEventsTable() {
@@ -58,12 +58,14 @@ async function createEventsTable() {
 
 //*********************** User Events Table ***********************//
 
-// const createUserEventsTableSqlString = `
-//     CREATE TABLE IF NOT EXISTS userEvents(
-//         userEventsId INT GENERATED ALWAYS AS IDENTITY,
-//         userName TEXT,
-//         eventName TEXT         
-//         );`;
+
+const createUserEventsTableSqlString = `
+    CREATE TABLE IF NOT EXISTS userEvents(
+        userEventsId INT GENERATED ALWAYS AS IDENTITY,
+        userId INT,
+        eventId INT         
+        );`;
+
 
 // async function createUserEventsTable() {
 //   const res = await query(createUserEventsTableSqlString);
@@ -72,12 +74,13 @@ async function createEventsTable() {
 
 //*********************** Event Tags Table ***********************//
 
-// const createEventTagsTableSqlString = `
-//     CREATE TABLE IF NOT EXISTS eventTags(
-//         eventTagId INT GENERATED ALWAYS AS IDENTITY,
-//         tagName TEXT,
-//         eventName TEXT         
-//         );`;
+
+const createEventTagsTableSqlString = `
+    CREATE TABLE IF NOT EXISTS eventTags(
+        eventTagId INT GENERATED ALWAYS AS IDENTITY,
+        tagName TEXT,
+        eventId INT         
+        );`;
 
 // async function createEventTagsTable() {
 //   const res = await query(createEventTagsTableSqlString);
@@ -86,11 +89,11 @@ async function createEventsTable() {
 
 //*********************** Tags Table ***********************//
 
-// const createTagsTableSqlString = `
-//     CREATE TABLE IF NOT EXISTS tags(
-//         tagsId INT GENERATED ALWAYS AS IDENTITY,
-//         tagName TEXT        
-//         );`;
+const createTagsTableSqlString = `
+    CREATE TABLE IF NOT EXISTS tags(
+        tagsId INT GENERATED ALWAYS AS IDENTITY,
+        tagId INT        
+        );`;
 
 // async function createTagsTable() {
 //   const res = await query(createTagsTableSqlString);
@@ -99,12 +102,14 @@ async function createEventsTable() {
 
 //*********************** User Friends Table ***********************//
 
-// const createUserFriendsTableSqlString = `
-//     CREATE TABLE IF NOT EXISTS userFriends(
-//         userFriendsId INT GENERATED ALWAYS AS IDENTITY,
-//         friend1 TEXT,
-//         friend2 TEXT       
-//         );`;
+
+const createUserFriendsTableSqlString = `
+    CREATE TABLE IF NOT EXISTS userFriends(
+        userFriendsId INT GENERATED ALWAYS AS IDENTITY,
+        friend1 INT,
+        friend2 INT       
+        );`;
+
 
 // async function createUserFriendsTable() {
 //   const res = await query(createUserFriendsTableSqlString);

@@ -13,23 +13,25 @@ async function populateEventsTable(eventArray) {
   for (let i = 0; i < eventArray.length; i++) {
     const res = await query(
       `
-        INSERT INTO events (eventName, eventDescription, mainDescription, eventImg, eventTime, eventDate, rating, organiser, email, address, lat, lng)
+        INSERT INTO events (organiser, eventName, img, locLon, locLat, locName, date, time, eventDescription, mainDescription, email, rating, postDate)
         VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *;
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP) RETURNING *;
     `,
       [
+        eventArray[i].organiser,
         eventArray[i].eventName,
+        models-update
+        eventArray[i].img,
+        eventArray[i].locLon,
+        eventArray[i].locLat,
+        eventArray[i].locName,
+        eventArray[i].date,
+        eventArray[i].time,
         eventArray[i].eventDescription,
         eventArray[i].mainDescription,
-        eventArray[i].eventImg,
-        eventArray[i].eventTime,
-        eventArray[i].eventDate,
-        eventArray[i].rating,
-        eventArray[i].organiser,
         eventArray[i].email,
-        eventArray[i].address,
-        eventArray[i].lat,
-        eventArray[i].lng,
+
+        eventArray[i].rating,
 
       ]
     );
@@ -80,37 +82,39 @@ async function populateEventsTable(eventArray) {
 //   console.log("Comments table has been populated");
 // }
 
-// //*********************** Populate User Events Table ***********************//
-// async function populateUserEventsTable(userEventsArray) {
-//   for (let i = 0; i < userEventsArray.length; i++) {
-//     const res = await query(
-//       `
-//         INSERT INTO userEvents (userName, eventName)
-//         VALUES
-//         ($1, $2) RETURNING *;
-//     `,
-//       [userEventsArray[i].userName, userEventsArray[i].eventName]
-//     );
-//     console.log(res);
-//   }
-//   console.log("User events table has been populated");
-// }
 
-// //*********************** Event Tags Table ***********************//
-// async function populateEventTagsTable(eventTagsArray) {
-//   for (let i = 0; i < eventTagsArray.length; i++) {
-//     const res = await query(
-//       `
-//         INSERT INTO eventTags (tagName, eventName)
-//         VALUES
-//         ($1, $2) RETURNING *;
-//     `,
-//       [eventTagsArray[i].tagName, eventTagsArray[i].eventName]
-//     );
-//     console.log(res);
-//   }
-//   console.log("Event tags table has been populated");
-// }
+//*********************** Populate User Events Table ***********************//
+async function populateUserEventsTable(userEventsArray) {
+  for (let i = 0; i < userEventsArray.length; i++) {
+    const res = await query(
+      `
+        INSERT INTO userEvents (userId, eventId)
+        VALUES
+        ($1, $2) RETURNING *;
+    `,
+      [userEventsArray[i].userId, userEventsArray[i].eventId]
+    );
+    console.log(res);
+  }
+  console.log("User events table has been populated");
+}
+
+//*********************** Event Tags Table ***********************//
+async function populateEventTagsTable(eventTagsArray) {
+  for (let i = 0; i < eventTagsArray.length; i++) {
+    const res = await query(
+      `
+        INSERT INTO eventTags (tagId, eventId)
+        VALUES
+        ($1, $2) RETURNING *;
+    `,
+      [eventTagsArray[i].tagId, eventTagsArray[i].eventId]
+    );
+    console.log(res);
+  }
+  console.log("Event tags table has been populated");
+}
+
 
 // //*********************** Tags Table ***********************//
 // async function populateTagsTable(tagsArray) {

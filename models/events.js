@@ -8,27 +8,27 @@ export async function getAllEvents() {
   return result.rows;
 }
 
-// Getting the users events - not working?
-export async function getEventsByUser(userName) {
+// Getting the users events - not working? Check if fixed? Finds by organiser id
+export async function getEventsByOrganiser(organiserId) {
   const result = await query(
     `
         SELECT * FROM events
-        WHERE organiser ILIKE  $1
+        WHERE organiser = $1
         ORDER BY postDate DESC;
     `,
-    [userName]
+    [organiserId]
   );
   return result.rows;
 }
 
-// Get events by user id
-export async function getEventsByName(eventName) {
+// Get events by user id (NO LONGER NECESSARY?)
+export async function getEventsById(eventId) {
   const result = await query(
     `
     SELECT * FROM events
-    WHERE eventName = $1
+    WHERE eventId = $1
     ORDER BY date;`,
-    [eventName]
+    [eventId]
   );
   return result.rows;
 }
@@ -40,9 +40,9 @@ export async function createEvent(request) {
   const result = await query(
     `
         INSERT INTO events 
-        (organiser, eventName, img, locLon, locLat, locName, date, time, description, contact, rating, postDate)
+        (organiser, eventName, img, locLon, locLat, locName, date, time, eventDescription, mainDescription, email, rating, postDate)
         VALUES 
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, CURRENT_TIMESTAMP ) 
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP ) 
         RETURNING *;`,
     [
       request.organiser,
@@ -53,8 +53,9 @@ export async function createEvent(request) {
       request.locName,
       request.date,
       request.time,
-      request.description,
-      request.contact,
+      request.eventDescription,
+      request.mainDescription,
+      request.email,
       request.rating,
     ]
   );
