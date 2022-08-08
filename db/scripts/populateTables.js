@@ -2,8 +2,8 @@
 import usersLib from "../libs/usersLib.js";
 // import commentsLib from "../libs/commentsLib";
 import userEventsLib from "../libs/userEventsLib.js";
-// import eventTagsLib from "../libs/eventTagsLib";
-import tagsLib from "../libs/tagsLib";
+import eventTagsLib from "../libs/eventTagsLib.js";
+import tagsLib from "../libs/tagsLib.js";
 // import userFriendsLib from "../libs/userFriendsLib";
 import { dummyEvents } from "../libs/newEventsLib.js";
 import { query } from "../index.js";
@@ -90,15 +90,15 @@ async function populateUserEventsTable(userEventsArray) {
 }
 
 //*********************** Event Tags Table ***********************//
-async function populateEventTagsTable(eventTagsArray) {
-  for (let i = 0; i < eventTagsArray.length; i++) {
+async function populateEventTagsTable(eventTagsLib) {
+  for (let i = 0; i < eventTagsLib.length; i++) {
     const res = await query(
       `
         INSERT INTO eventTags (tagId, eventId)
         VALUES
         ($1, $2) RETURNING *;
     `,
-      [eventTagsArray[i].tagId, eventTagsArray[i].eventId]
+      [eventTagsLib[i].tagId, eventTagsLib[i].eventId]
     );
     console.log(res);
   }

@@ -86,7 +86,7 @@ async function createEventTagsTable() {
 
 const createTagsTableSqlString = `
     CREATE TABLE IF NOT EXISTS tags(
-        tagsId INT GENERATED ALWAYS AS IDENTITY,
+        tagId INT GENERATED ALWAYS AS IDENTITY,
         tagName TEXT        
         );`;
 
