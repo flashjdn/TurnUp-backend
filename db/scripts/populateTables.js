@@ -1,10 +1,10 @@
 // import eventsLib from "../libs/eventsLib.js";
-/*import usersLib from "../libs/usersLib.js";
-import commentsLib from "../libs/commentsLib";
-import userEventsLib from "../libs/userEventsLib";
-import eventTagsLib from "../libs/eventTagsLib";
-import tagsLib from "../libs/tagsLib";
-import userFriendsLib from "../libs/userFriendsLib";*/
+import usersLib from "../libs/usersLib.js";
+// import commentsLib from "../libs/commentsLib";
+import userEventsLib from "../libs/userEventsLib.js";
+// import eventTagsLib from "../libs/eventTagsLib";
+// import tagsLib from "../libs/tagsLib";
+// import userFriendsLib from "../libs/userFriendsLib";
 import { dummyEvents } from "../libs/newEventsLib.js";
 import { query } from "../index.js";
 
@@ -13,14 +13,14 @@ async function populateEventsTable(eventArray) {
   for (let i = 0; i < eventArray.length; i++) {
     const res = await query(
       `
-        INSERT INTO events (organiser, eventName, img, lng, lat, locName, date, time, eventDescription, mainDescription, email, rating)
+        INSERT INTO events (organiser, eventName, img, lng, lat, address, date, time, eventDescription, mainDescription, email, rating)
         VALUES
         ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *;
     `,
       [
         eventArray[i].organiser,
         eventArray[i].eventName,
-        eventArray[i].eventImg,
+        eventArray[i].img,
         eventArray[i].lng,
         eventArray[i].lat,
         eventArray[i].address,
@@ -30,7 +30,6 @@ async function populateEventsTable(eventArray) {
         eventArray[i].mainDescription,
         eventArray[i].email,
         eventArray[i].rating,
-
       ]
     );
     console.log(res);
@@ -39,26 +38,20 @@ async function populateEventsTable(eventArray) {
 }
 
 //*********************** Populate Users Table ***********************//
-// async function populateUsersTable(userArray) {
-//   for (let i = 0; i < userArray.length; i++) {
-//     const res = await query(
-//       `
-//         INSERT INTO users (userName, email, locLon, locLat, locName)
-//         VALUES
-//         ($1, $2, $3, $4, $5) RETURNING *;
-//     `,
-//       [
-//         userArray[i].userName,
-//         userArray[i].email,
-//         userArray[i].locLon,
-//         userArray[i].locLat,
-//         userArray[i].locName,
-//       ]
-//     );
-//     console.log(res);
-//   }
-//   console.log("User table has been populated");
-// }
+async function populateUsersTable(userArray) {
+  for (let i = 0; i < userArray.length; i++) {
+    const res = await query(
+      `
+        INSERT INTO users (userName, email, img)
+        VALUES
+        ($1, $2, $3) RETURNING *;
+    `,
+      [userArray[i].userName, userArray[i].email, userArray[i].img]
+    );
+    console.log(res);
+  }
+  console.log("User table has been populated");
+}
 
 // //*********************** Populate Comments Table ***********************//
 // async function populateCommentsTable(commentsArray) {
@@ -79,7 +72,6 @@ async function populateEventsTable(eventArray) {
 //   }
 //   console.log("Comments table has been populated");
 // }
-
 
 //*********************** Populate User Events Table ***********************//
 async function populateUserEventsTable(userEventsArray) {
@@ -112,7 +104,6 @@ async function populateEventTagsTable(eventTagsArray) {
   }
   console.log("Event tags table has been populated");
 }
-
 
 // //*********************** Tags Table ***********************//
 // async function populateTagsTable(tagsArray) {
@@ -147,9 +138,9 @@ async function populateEventTagsTable(eventTagsArray) {
 // }
 
 await populateEventsTable(dummyEvents);
-/*await populateUsersTable(usersLib);
-await populateCommentsTable(commentsLib);
+await populateUsersTable(usersLib);
+//await populateCommentsTable(commentsLib);
 await populateUserEventsTable(userEventsLib);
-await populateEventTagsTable(eventTagsLib);
-await populateTagsTable(tagsLib);
-await populateUserFriendsTable(userFriendsLib);*/
+// await populateEventTagsTable(eventTagsLib);
+// await populateTagsTable(tagsLib);
+// await populateUserFriendsTable(userFriendsLib);
