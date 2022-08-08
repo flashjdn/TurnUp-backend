@@ -6,6 +6,9 @@ const tagsLib = [
   { tagName: "kid-friendly" },
   { tagName: "cowabunga" },
   { tagName: "kid-unfriendly" },
+  { tagName: "lgbtqi+" },
+  { tagName: "mormons" },
+  { tagName: "food" },
 ];
 
 export default tagsLib;

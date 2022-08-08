@@ -7,6 +7,7 @@ import {
   deleteEvent,
 } from "../models/events.js";
 import { getEventTags } from "../models/events_tags.js";
+import { getUserById } from "../models/users.js";
 const router = express.Router();
 
 /* GET users listing. */
@@ -30,6 +31,17 @@ router.get("/tags/:id", async function (req, res) {
   const responseObject = {
     success: true,
     message: "All event tags retrieved",
+    payload: data,
+  };
+  console.log(responseObject);
+  res.json(data);
+});
+
+router.get("/user/:id", async function (req, res) {
+  let data = await getUserById(req.params.id);
+  const responseObject = {
+    success: true,
+    message: "User has been retrieved",
     payload: data,
   };
   console.log(responseObject);

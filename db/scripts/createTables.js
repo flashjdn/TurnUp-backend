@@ -104,10 +104,10 @@ const createUserFriendsTableSqlString = `
         friend2 INT       
         );`;
 
-// async function createUserFriendsTable() {
-//   const res = await query(createUserFriendsTableSqlString);
-//   console.log(`${res.command} Created new table named user friends`);
-// }
+async function createUserFriendsTable() {
+  const res = await query(createUserFriendsTableSqlString);
+  console.log(`${res.command} Created new table named user friends`);
+}
 
 await createEventsTable();
 await createUsersTable();
@@ -115,4 +115,4 @@ await createUsersTable();
 await createUserEventsTable();
 await createEventTagsTable();
 await createTagsTable();
-// await createUserFriendsTable();
+await createUserFriendsTable();

@@ -1,6 +1,7 @@
 import { query } from "../db/index.js";
 
 //CHECK IF IT WORKS, MIGHT BE FOOKED
+//UPDATE: works
 export async function getEventTags(eventId) {
   const result = await query(
     `

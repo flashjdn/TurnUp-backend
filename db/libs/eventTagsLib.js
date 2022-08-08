@@ -15,13 +15,18 @@ const eventTagsLib = [
   { tagId: 4, eventId: 7 },
   { tagId: 4, eventId: 9 },
   { tagId: 5, eventId: 10 },
+  { tagId: 8, eventId: 10 },
+  { tagId: 9, eventId: 10 },
   { tagId: 5, eventId: 11 },
   { tagId: 5, eventId: 1 },
   { tagId: 6, eventId: 3 },
   { tagId: 6, eventId: 6 },
   { tagId: 6, eventId: 8 },
   { tagId: 6, eventId: 11 },
-  { tagId: 6, eventId: 4 },
+  { tagId: 7, eventId: 5 },
+  { tagId: 8, eventId: 11 },
+  { tagId: 9, eventId: 4 },
+  { tagId: 6, eventId: 3 },
 ];
 
 export default eventTagsLib;

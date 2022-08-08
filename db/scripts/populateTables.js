@@ -4,7 +4,7 @@ import usersLib from "../libs/usersLib.js";
 import userEventsLib from "../libs/userEventsLib.js";
 import eventTagsLib from "../libs/eventTagsLib.js";
 import tagsLib from "../libs/tagsLib.js";
-// import userFriendsLib from "../libs/userFriendsLib";
+import userFriendsLib from "../libs/userFriendsLib.js";
 import { dummyEvents } from "../libs/newEventsLib.js";
 import { query } from "../index.js";
 
@@ -121,21 +121,21 @@ async function populateTagsTable(tagsArray) {
   console.log("Tags table has been populated");
 }
 
-// //*********************** User Friends Table ***********************//
-// async function populateUserFriendsTable(userFriendsArray) {
-//   for (let i = 0; i < userFriendsArray.length; i++) {
-//     const res = await query(
-//       `
-//         INSERT INTO userFriends (friend1, friend2)
-//         VALUES
-//         ($1, $2) RETURNING *;
-//     `,
-//       [userFriendsArray[i].friend1, userFriendsArray[i].friend2]
-//     );
-//     console.log(res);
-//   }
-//   console.log("User friends table has been populated");
-// }
+//*********************** User Friends Table ***********************//
+async function populateUserFriendsTable(userFriendsArray) {
+  for (let i = 0; i < userFriendsLib.length; i++) {
+    const res = await query(
+      `
+        INSERT INTO userFriends (friend1, friend2)
+        VALUES
+        ($1, $2) RETURNING *;
+    `,
+      [userFriendsLib[i].friend1, userFriendsLib[i].friend2]
+    );
+    console.log(res);
+  }
+  console.log("User friends table has been populated");
+}
 
 await populateEventsTable(dummyEvents);
 await populateUsersTable(usersLib);
@@ -143,4 +143,4 @@ await populateUsersTable(usersLib);
 await populateUserEventsTable(userEventsLib);
 await populateEventTagsTable(eventTagsLib);
 await populateTagsTable(tagsLib);
-// await populateUserFriendsTable(userFriendsLib);
+await populateUserFriendsTable(userFriendsLib);
