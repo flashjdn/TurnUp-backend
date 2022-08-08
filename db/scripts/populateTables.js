@@ -20,10 +20,10 @@ async function populateEventsTable(eventArray) {
       [
         eventArray[i].organiser,
         eventArray[i].eventName,
-        eventArray[i].img,
+        eventArray[i].eventImg,
         eventArray[i].lng,
         eventArray[i].lat,
-        eventArray[i].locName,
+        eventArray[i].address,
         eventArray[i].date,
         eventArray[i].time,
         eventArray[i].eventDescription,
