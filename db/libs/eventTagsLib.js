@@ -24,4 +24,4 @@ const eventTagsLib = [
   { tagId: 6, eventId: 4 },
 ];
 
-export default eventsTagsLib;
+export default eventTagsLib;
