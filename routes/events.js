@@ -1,8 +1,8 @@
 import express from "express";
 import {
   getAllEvents,
-  getEventsByUser,
-  getEventsByName,
+  getEventsByOrganiser,
+  getEventsById,
   createEvent,
   deleteEvent,
 } from "../models/events.js";
@@ -58,4 +58,4 @@ router.patch("/:id", async function (req, res) {
   res.json(responseObject);
 });
 
-export  {router as eventsRouter};
+export { router as eventsRouter };
