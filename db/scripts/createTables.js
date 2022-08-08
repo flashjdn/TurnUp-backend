@@ -73,27 +73,27 @@ async function createUserEventsTable() {
 const createEventTagsTableSqlString = `
     CREATE TABLE IF NOT EXISTS eventTags(
         eventTagId INT GENERATED ALWAYS AS IDENTITY,
-        tagName TEXT,
+        tagId INT,
         eventId INT         
         );`;
 
-// async function createEventTagsTable() {
-//   const res = await query(createEventTagsTableSqlString);
-//   console.log(`${res.command} Created new table named Event tags`);
-// }
+async function createEventTagsTable() {
+  const res = await query(createEventTagsTableSqlString);
+  console.log(`${res.command} Created new table named Event tags`);
+}
 
 //*********************** Tags Table ***********************//
 
 const createTagsTableSqlString = `
     CREATE TABLE IF NOT EXISTS tags(
         tagsId INT GENERATED ALWAYS AS IDENTITY,
-        tagId INT        
+        tagName TEXT        
         );`;
 
-// async function createTagsTable() {
-//   const res = await query(createTagsTableSqlString);
-//   console.log(`${res.command} Created new table named tags`);
-// }
+async function createTagsTable() {
+  const res = await query(createTagsTableSqlString);
+  console.log(`${res.command} Created new table named tags`);
+}
 
 //*********************** User Friends Table ***********************//
 
@@ -113,6 +113,6 @@ await createEventsTable();
 await createUsersTable();
 // await createCommentsTable();
 await createUserEventsTable();
-// await createEventTagsTable();
-// await createTagsTable();
+await createEventTagsTable();
+await createTagsTable();
 // await createUserFriendsTable();

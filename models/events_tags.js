@@ -6,7 +6,7 @@ export async function getEventTags(eventId) {
     FROM eventTags
     INNER JOIN tags
     ON eventTags.tagId = tags.tagId
-    WHERE eventTags.eventTagId = $1
+    WHERE eventTags.eventId = $1
     `,
     [eventId]
   );

@@ -3,7 +3,7 @@ import usersLib from "../libs/usersLib.js";
 // import commentsLib from "../libs/commentsLib";
 import userEventsLib from "../libs/userEventsLib.js";
 // import eventTagsLib from "../libs/eventTagsLib";
-// import tagsLib from "../libs/tagsLib";
+import tagsLib from "../libs/tagsLib";
 // import userFriendsLib from "../libs/userFriendsLib";
 import { dummyEvents } from "../libs/newEventsLib.js";
 import { query } from "../index.js";
@@ -106,20 +106,20 @@ async function populateEventTagsTable(eventTagsArray) {
 }
 
 // //*********************** Tags Table ***********************//
-// async function populateTagsTable(tagsArray) {
-//   for (let i = 0; i < tagsArray.length; i++) {
-//     const res = await query(
-//       `
-//         INSERT INTO tags (tagName)
-//         VALUES
-//         ($1) RETURNING *;
-//     `,
-//       [tagsArray[i].tagName]
-//     );
-//     console.log(res);
-//   }
-//   console.log("Tags table has been populated");
-// }
+async function populateTagsTable(tagsArray) {
+  for (let i = 0; i < tagsArray.length; i++) {
+    const res = await query(
+      `
+        INSERT INTO tags (tagName)
+        VALUES
+        ($1) RETURNING *;
+    `,
+      [tagsArray[i].tagName]
+    );
+    console.log(res);
+  }
+  console.log("Tags table has been populated");
+}
 
 // //*********************** User Friends Table ***********************//
 // async function populateUserFriendsTable(userFriendsArray) {
@@ -141,6 +141,6 @@ await populateEventsTable(dummyEvents);
 await populateUsersTable(usersLib);
 //await populateCommentsTable(commentsLib);
 await populateUserEventsTable(userEventsLib);
-// await populateEventTagsTable(eventTagsLib);
-// await populateTagsTable(tagsLib);
+await populateEventTagsTable(eventTagsLib);
+await populateTagsTable(tagsLib);
 // await populateUserFriendsTable(userFriendsLib);
