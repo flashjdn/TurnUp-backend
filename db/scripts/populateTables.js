@@ -13,24 +13,22 @@ async function populateEventsTable(eventArray) {
   for (let i = 0; i < eventArray.length; i++) {
     const res = await query(
       `
-        INSERT INTO events (organiser, eventName, img, locLon, locLat, locName, date, time, eventDescription, mainDescription, email, rating, postDate)
+        INSERT INTO events (organiser, eventName, img, lng, lat, locName, date, time, eventDescription, mainDescription, email, rating)
         VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP) RETURNING *;
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *;
     `,
       [
         eventArray[i].organiser,
         eventArray[i].eventName,
-        models-update
         eventArray[i].img,
-        eventArray[i].locLon,
-        eventArray[i].locLat,
+        eventArray[i].lng,
+        eventArray[i].lat,
         eventArray[i].locName,
         eventArray[i].date,
         eventArray[i].time,
         eventArray[i].eventDescription,
         eventArray[i].mainDescription,
         eventArray[i].email,
-
         eventArray[i].rating,
 
       ]

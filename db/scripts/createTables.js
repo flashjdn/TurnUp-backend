@@ -5,23 +5,23 @@ import { query } from "../index.js";
 const createEventsTableSqlString = `
     CREATE TABLE IF NOT EXISTS events(
         eventId INT GENERATED ALWAYS AS IDENTITY,
-       models-update
-        organiser INT,
+        organiser TEXT,
         eventName TEXT,
         img TEXT,
-        locLon DECIMAL(8,6),
-        locLat DECIMAL(9,6),
+        lng DECIMAL(8,6),
+        lat DECIMAL(9,6),
         locName TEXT,
         date DATE,
         time TIME,
         eventDescription TEXT,
         mainDescription TEXT,
         email TEXT,
+        rating INT
         );`;
 
 async function createEventsTable() {
-  const res = await query(createEventsTableSqlString);
-  console.log(`${res.command} Created new table named events`);
+    const res = await query(createEventsTableSqlString);
+    console.log(`${res.command} Created new table named events`);
 }
 
 //*********************** Users Table ***********************//
