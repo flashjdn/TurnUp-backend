@@ -48,7 +48,7 @@ router.get("/user/:id", async function (req, res) {
   res.json(data);
 });
 
-router.post("/", async function (req, res) {
+router.post("/all", async function (req, res) {
   console.log(req);
   let data = await createEvent(req.body);
   const responseObject = {

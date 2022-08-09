@@ -1,14 +1,10 @@
 //populate with all hard coded event tags
 const tagsLib = [
-  { tagName: "accessible" },
-  { tagName: "god-friendly" },
-  { tagName: "museum" },
-  { tagName: "kid-friendly" },
-  { tagName: "cowabunga" },
-  { tagName: "kid-unfriendly" },
-  { tagName: "lgbtqi+" },
-  { tagName: "mormons" },
-  { tagName: "food" },
+  { tagName: "Pet-Friendly" },
+  { tagName: "18+" },
+  { tagName: "Outdoors" },
+  { tagName: "Parking" },
+  { tagName: "Family-Friendly" }
 ];
 
 export default tagsLib;
