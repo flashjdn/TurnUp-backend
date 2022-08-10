@@ -20,7 +20,5 @@
     "morgan": "~1.9.1",
     "nodemon": "^2.0.19",
     "pg": "^8.7.3"
-  },
-  "proxy":"http://localhost:4000"
-
+  }
 }
