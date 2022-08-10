@@ -49,7 +49,7 @@ router.get("/user/:id", async function (req, res) {
 });
 
 router.post("/", async function (req, res) {
-  console.log(req);
+  res.set("Access-Control-Allow-Origin", "*");
   let data = await createEvent(req.body);
   const responseObject = {
     success: true,
