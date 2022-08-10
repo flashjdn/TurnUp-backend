@@ -40,23 +40,33 @@ export async function createEvent(request) {
   const result = await query(
     `
         INSERT INTO events 
-        (organiser, eventName, img, locLon, locLat, locName, date, time, eventDescription, mainDescription, email, rating, postDate)
+        (eventName, 
+          eventDescription, 
+          mainDescription, 
+          date, 
+          time, 
+          organiser, 
+          lat, 
+          lng, 
+          address, 
+          img, 
+          email
+        )
         VALUES 
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP ) 
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 ) 
         RETURNING *;`,
     [
-      request.organiser,
       request.eventName,
-      request.img,
-      request.locLon,
-      request.locLat,
-      request.locName,
-      request.date,
-      request.time,
       request.eventDescription,
       request.mainDescription,
+      request.date,
+      request.time,
+      request.organiser,
+      request.lat,
+      request.lng,
+      request.address,
+      request.img,
       request.email,
-      request.rating,
     ]
   );
   return result.rows;

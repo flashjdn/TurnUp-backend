@@ -48,8 +48,8 @@ router.get("/user/:id", async function (req, res) {
   res.json(data);
 });
 
-router.post("/", async function (req, res) {
-  res.set("Access-Control-Allow-Origin", "*");
+router.post("/all", async function (req, res) {
+  console.log(req);
   let data = await createEvent(req.body);
   const responseObject = {
     success: true,
