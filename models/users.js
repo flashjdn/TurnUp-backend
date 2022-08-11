@@ -12,3 +12,15 @@ export async function getUserById(userId) {
   );
   return result.rows;
 }
+
+export async function getEventOrganiserById(userId) {
+  const result = await query(
+    `
+    SELECT userName, email
+    FROM users
+    WHERE userId = $1
+    `,
+    [userId]
+  );
+  return result.rows;
+}

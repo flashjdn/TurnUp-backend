@@ -21,7 +21,7 @@ export async function getEventsByOrganiser(organiserId) {
   return result.rows;
 }
 
-// Get events by user id (NO LONGER NECESSARY?)
+//No longer neccessary?
 export async function getEventsById(eventId) {
   const result = await query(
     `
@@ -32,6 +32,8 @@ export async function getEventsById(eventId) {
   );
   return result.rows;
 }
+
+
 
 // ************** Create Event **************************************
 export async function createEvent(request) {
