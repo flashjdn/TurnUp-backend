@@ -33,7 +33,19 @@ export async function getEventsById(eventId) {
   return result.rows;
 }
 
-
+export async function getAtttendedEvents(userId) {
+  const result = await query(
+    `
+    SELECT userEvents.userId, events.*
+    FROM userEvents
+    INNER JOIN events
+    ON userEvents.eventId = events.eventId
+    WHERE userEvents.userId = $1
+    `,
+    [userId]
+  );
+  return result.rows;
+}
 
 // ************** Create Event **************************************
 export async function createEvent(request) {

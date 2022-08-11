@@ -65,7 +65,7 @@ const createUserEventsTableSqlString = `
 
 async function createUserEventsTable() {
   const res = await query(createUserEventsTableSqlString);
-  console.log(`${res.command} Created new table named User Events`);
+  console.log(`${res.command} Created new table named userEvents`);
 }
 
 //*********************** Event Tags Table ***********************//

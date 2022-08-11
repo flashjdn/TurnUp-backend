@@ -15,6 +15,8 @@ router.get("/", function (req, res, next) {
   res.json({ message: "you have reached the events endpoint" });
 });
 
+/* ___________________________EVENTS ROUTES_______________________________ */
+
 router.get("/all", async function (req, res) {
   let data = await getAllEvents();
   const responseObject = {
@@ -25,6 +27,30 @@ router.get("/all", async function (req, res) {
   console.log(responseObject);
   res.json(data);
 });
+
+router.get("/organiser/:id", async function (req, res) {
+  let data = await getEventOrganiserById(req.params.id);
+  const responseObject = {
+    success: true,
+    message: "User has been retrieved",
+    payload: data,
+  };
+  console.log(responseObject);
+  res.json(data);
+});
+
+router.get("/att/:id", async function (req, res) {
+  let data = await getAtttendedEvents(req.params.id);
+  const responseObject = {
+    success: true,
+    message: "Events by attendee have been retrieved",
+    payload: data,
+  };
+  console.log(responseObject);
+  res.json(data);
+});
+
+/* ___________________________TAGS ROUTES_______________________________ */
 
 router.get("/tags/:id", async function (req, res) {
   let data = await getEventTags(req.params.id);
@@ -37,19 +63,10 @@ router.get("/tags/:id", async function (req, res) {
   res.json(data);
 });
 
+/* ___________________________USER ROUTES_______________________________ */
+
 router.get("/user/:id", async function (req, res) {
   let data = await getUserById(req.params.id);
-  const responseObject = {
-    success: true,
-    message: "User has been retrieved",
-    payload: data,
-  };
-  console.log(responseObject);
-  res.json(data);
-});
-
-router.get("/organiser/:id", async function (req, res) {
-  let data = await getEventOrganiserById(req.params.id);
   const responseObject = {
     success: true,
     message: "User has been retrieved",
