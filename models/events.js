@@ -14,7 +14,7 @@ export async function getEventsByOrganiser(organiserId) {
     `
         SELECT * FROM events
         WHERE organiser = $1
-        ORDER BY postDate DESC;
+        ORDER BY date DESC;
     `,
     [organiserId]
   );
