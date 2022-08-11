@@ -33,7 +33,7 @@ export async function getEventsById(eventId) {
   return result.rows;
 }
 
-export async function getAtttendedEvents(userId) {
+export async function getAttendedEvents(userId) {
   const result = await query(
     `
     SELECT userEvents.userId, events.*

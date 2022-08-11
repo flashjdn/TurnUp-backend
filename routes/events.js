@@ -3,6 +3,7 @@ import {
   getAllEvents,
   getEventsByOrganiser,
   getEventsById,
+  getAttendedEvents,
   createEvent,
   deleteEvent,
 } from "../models/events.js";
