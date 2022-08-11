@@ -32,7 +32,7 @@ async function populateEventsTable(eventArray) {
         eventArray[i].rating,
       ]
     );
-    console.log(res);
+
   }
   console.log("Table has been populated");
 }
@@ -48,7 +48,7 @@ async function populateUsersTable(userArray) {
     `,
       [userArray[i].userName, userArray[i].email, userArray[i].img]
     );
-    console.log(res);
+
   }
   console.log("User table has been populated");
 }
@@ -84,7 +84,7 @@ async function populateUserEventsTable(userEventsArray) {
     `,
       [userEventsArray[i].userId, userEventsArray[i].eventId]
     );
-    console.log(res);
+
   }
   console.log("User events table has been populated");
 }
@@ -100,7 +100,7 @@ async function populateEventTagsTable(eventTagsLib) {
     `,
       [eventTagsLib[i].tagId, eventTagsLib[i].eventId]
     );
-    console.log(res);
+
   }
   console.log("Event tags table has been populated");
 }
@@ -116,7 +116,7 @@ async function populateTagsTable(tagsArray) {
     `,
       [tagsArray[i].tagName]
     );
-    console.log(res);
+
   }
   console.log("Tags table has been populated");
 }
@@ -132,7 +132,7 @@ async function populateUserFriendsTable(userFriendsArray) {
     `,
       [userFriendsLib[i].friend1, userFriendsLib[i].friend2]
     );
-    console.log(res);
+
   }
   console.log("User friends table has been populated");
 }
