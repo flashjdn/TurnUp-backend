@@ -40,7 +40,7 @@ router.get("/organiser/:id", async function (req, res) {
 });
 
 router.get("/att/:id", async function (req, res) {
-  let data = await getAtttendedEvents(req.params.id);
+  let data = await getAttendedEvents(req.params.id);
   const responseObject = {
     success: true,
     message: "Events by attendee have been retrieved",
