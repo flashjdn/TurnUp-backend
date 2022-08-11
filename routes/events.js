@@ -29,19 +29,19 @@ router.get("/all", async function (req, res) {
   res.json(data);
 });
 
-router.get("/organiser/:id", async function (req, res) {
-  let data = await getEventOrganiserById(req.params.id);
+router.get("/att/:id", async function (req, res) {
+  let data = await getAttendedEvents(req.params.id);
   const responseObject = {
     success: true,
-    message: "User has been retrieved",
+    message: "Events by attendee have been retrieved",
     payload: data,
   };
   console.log(responseObject);
   res.json(data);
 });
 
-router.get("/att/:id", async function (req, res) {
-  let data = await getAttendedEvents(req.params.id);
+router.get("/event-org/:id", async function (req, res) {
+  let data = await getEventsByOrganiser(req.params.id);
   const responseObject = {
     success: true,
     message: "Events by attendee have been retrieved",
@@ -76,7 +76,18 @@ router.get("/user/:id", async function (req, res) {
   console.log(responseObject);
   res.json(data);
 });
+router.get("/organiser/:id", async function (req, res) {
+  let data = await getEventOrganiserById(req.params.id);
+  const responseObject = {
+    success: true,
+    message: "User has been retrieved",
+    payload: data,
+  };
+  console.log(responseObject);
+  res.json(data);
+});
 
+/* _______________________________________POST REQUESTS_________________________________________*/
 router.post("/all", async function (req, res) {
   console.log(req);
   let data = await createEvent(req.body);
