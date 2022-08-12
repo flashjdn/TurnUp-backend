@@ -28,7 +28,7 @@ export async function getEventOrganiserById(userId) {
 export async function getEventAttendees(eventId) {
   const result = await query(
     `
-    SELECT userEvens.eventId, users.userName, users.img
+    SELECT userEvents.eventId, users.userName, users.img
     FROM userEvents
     INNER JOIN users
     ON userEvents.userId = users.userId
