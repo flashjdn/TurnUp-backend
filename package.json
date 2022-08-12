@@ -8,6 +8,7 @@
     "db:createTable": "node -r dotenv/config ./db/scripts/createTables.js",
     "db:populateTable": "node -r dotenv/config ./db/scripts/populateTables.js",
     "db:dropTable": "node -r dotenv/config ./db/scripts/dropTables.js",
+    "db:readTable": "node -r dotenv/config ./db/scripts/readTables.js",
     "dev": "nodemon -r dotenv/config ./bin/www.js"
   },
   "dependencies": {
