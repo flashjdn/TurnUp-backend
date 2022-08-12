@@ -12,6 +12,7 @@ import {
   getEventOrganiserById,
   getUserById,
   getEventAttendees,
+  getUserFriends,
 } from "../models/users.js";
 const router = express.Router();
 
