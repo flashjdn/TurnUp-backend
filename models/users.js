@@ -38,3 +38,17 @@ export async function getEventAttendees(eventId) {
   );
   return result.rows;
 }
+
+export async function getUserFriends(userId) {
+  const result = await query(
+    `
+    SELECT (CASE 
+      WHEN userFriends.friend1 = $1 THEN (SELECT userFriends.friend2)
+      WHEN userFriends.friend2 = $1 THEN (SELECT userFriends.friend1)
+      END) AS friend
+    FROM userFriends
+    `,
+    [userId]
+  );
+  return result.rows;
+}

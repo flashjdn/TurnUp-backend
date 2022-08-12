@@ -102,6 +102,17 @@ router.get("/attendees/:id", async function (req, res) {
   res.json(data);
 });
 
+router.get("/friends/:id", async function (req, res) {
+  let data = await getUserFriends(req.params.id);
+  const responseObject = {
+    success: true,
+    message: "Friends have been retrieved",
+    payload: data,
+  };
+  console.log(responseObject);
+  res.json(data);
+});
+
 /* _______________________________________POST REQUESTS_________________________________________*/
 router.post("/all", async function (req, res) {
   console.log(req);
