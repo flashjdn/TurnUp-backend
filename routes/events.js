@@ -83,7 +83,7 @@ router.get("/user/:id", async function (req, res) {
   res.json(data);
 });
 
-router.get("/user/:email", async function (req, res) {
+router.get("/userem/:email", async function (req, res) {
   let data = await getUserByEmail(req.params.email);
   const responseObject = {
     success: true,
