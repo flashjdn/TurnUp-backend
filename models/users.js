@@ -24,3 +24,17 @@ export async function getEventOrganiserById(userId) {
   );
   return result.rows;
 }
+
+export async function getEventAttendees(eventId) {
+  const result = await query(
+    `
+    SELECT userEvens.eventId, users.userName, users.img
+    FROM userEvents
+    INNER JOIN users
+    ON userEvents.userId = users.userId
+    WHERE userEvents.eventId = $1
+    `,
+    [eventId]
+  );
+  return result.rows;
+}
