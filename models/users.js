@@ -43,10 +43,13 @@ export async function getUserFriends(userId) {
   const result = await query(
     `
     SELECT (CASE 
-      WHEN friend1 = $1 THEN (SELECT friend2)
-      WHEN friend2 = $1 THEN (SELECT friend1)
+      WHEN userFriends.friend1 = $1 THEN (SELECT userFriends.friend2)
+      WHEN userFriends.friend2 = $1 THEN (SELECT userFriends.friend1)
       END) AS friend
     FROM userFriends
+    INNER JOIN users ON (CASE 
+      WHEN userFriends.friend1 = $1 THEN (userFriends.friend1 = users.userId)
+      WHEN userFriends.friend2 = $1 THEN (userFriends.friend2 = users.userId))
     WHERE friend1 = $1 OR friend2 = $1
     `,
     [userId]
