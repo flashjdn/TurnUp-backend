@@ -47,9 +47,7 @@ export async function getUserFriends(userId) {
       WHEN userFriends.friend2 = $1 THEN (SELECT userFriends.friend1)
       END) AS friend
     FROM userFriends
-    INNER JOIN users (CASE 
-      WHEN userFriends.friend1 = $1 THEN (ON userFriends.friend1 = users.userId)
-      WHEN userFriends.friend2 = $1 THEN (ON userFriends.friend2 = users.userId))
+    INNER JOIN users ON friend = users.userId
     WHERE friend1 = $1 OR friend2 = $1
     `,
     [userId]
