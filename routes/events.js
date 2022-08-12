@@ -13,6 +13,7 @@ import {
   getUserById,
   getEventAttendees,
   getUserFriends,
+  getUserByEmail,
 } from "../models/users.js";
 const router = express.Router();
 
@@ -81,6 +82,18 @@ router.get("/user/:id", async function (req, res) {
   console.log(responseObject);
   res.json(data);
 });
+
+router.get("/user/:email", async function (req, res) {
+  let data = await getUserByEmail(req.params.email);
+  const responseObject = {
+    success: true,
+    message: "User has been retrieved",
+    payload: data,
+  };
+  console.log(responseObject);
+  res.json(data);
+});
+
 router.get("/organiser/:id", async function (req, res) {
   let data = await getEventOrganiserById(req.params.id);
   const responseObject = {

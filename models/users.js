@@ -13,6 +13,18 @@ export async function getUserById(userId) {
   return result.rows;
 }
 
+export async function getUserByEmail(userEmail) {
+  const result = await query(
+    `
+    SELECT *
+    FROM users
+    WHERE email = $1
+    `,
+    [userEmail]
+  );
+  return result.rows;
+}
+
 export async function getEventOrganiserById(userId) {
   const result = await query(
     `
