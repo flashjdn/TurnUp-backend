@@ -66,4 +66,21 @@ export async function getUserFriends(userId) {
   return result.rows;
 }
 
-//userFriends.friend1
+//Create user:
+export async function createUser(request) {
+  console.log(request);
+
+  const result = await query(
+    `
+        INSERT INTO users 
+        (img,
+          userName,
+          email
+        )
+        VALUES 
+        ($1, $2, $3) 
+        RETURNING *;`,
+    [request.img, request.userName, request.email]
+  );
+  return result.rows;
+}

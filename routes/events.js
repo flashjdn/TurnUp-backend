@@ -14,6 +14,7 @@ import {
   getEventAttendees,
   getUserFriends,
   getUserByEmail,
+  createUser,
 } from "../models/users.js";
 const router = express.Router();
 
@@ -134,6 +135,18 @@ router.post("/all", async function (req, res) {
   const responseObject = {
     success: true,
     message: "Event created",
+    payload: data,
+  };
+  //console.log(responseObject);
+  res.json(responseObject);
+});
+
+router.post("/user", async function (req, res) {
+  console.log(req);
+  let data = await createUser(req.body);
+  const responseObject = {
+    success: true,
+    message: "User created",
     payload: data,
   };
   //console.log(responseObject);
