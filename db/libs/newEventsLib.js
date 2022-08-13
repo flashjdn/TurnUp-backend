@@ -203,8 +203,8 @@ export const dummyEvents = [
     organiser: 9,
     email: "kal@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.99710213,
-    lng: -0.106028093,
+    lat: 51.539649832564706,
+    lng: -0.03265672934213817,
   },
   {
     eventId: 12,
@@ -220,8 +220,8 @@ export const dummyEvents = [
     organiser: 7,
     email: "emu@gmail.com",
     address: "Hyde Park",
-    lat: 50.99710225,
-    lng: -0.106028076,
+    lat: 51.482335863352006,
+    lng: - 0.08165385354368448,
   },
   {
     eventId: 13,
@@ -229,7 +229,7 @@ export const dummyEvents = [
     eventDescription: "Free intro class",
     mainDescription:
       "Try our Tai Chi group for free and start your day with early morning mindfulness, delivered by Linden. All ages welcome",
-    img: "https://scontent.fbhx4-1.fna.fbcdn.net/v/t39.30808-6/293476123_3243003902641366_1148149354698402518_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=t_08kST9g6wAX-NcZuY&_nc_ht=scontent.fbhx4-1.fna&oh=00_AT_csUjqPXYwQZlY6Yz5tDv32IhNVaKhUfY8kpTtXCxR2A&oe=62E809FA",
+    img: "https://cdn.lifehack.org/wp-content/uploads/2014/03/tai-chi.jpg",
     eventTags: ["outdoors", "parking"],
     date: "2022-08-09",
     time: "08:00:00",
@@ -237,8 +237,8 @@ export const dummyEvents = [
     organiser: 6,
     email: "lwoodlands@gmail.com",
     address: "Hyde Park",
-    lat: 50.997103,
-    lng: -0.106028084,
+    lat: 51.47378281099376,
+    lng: - 0.0013163363388626118,
   },
 
   {
@@ -255,8 +255,8 @@ export const dummyEvents = [
     organiser: 10,
     email: "wrufc@gmail.com",
     address: "Hyde Park",
-    lat: 50.9971022,
-    lng: -0.1060281,
+    lat: 51.51131251727645,
+    lng: - 0.16075006874771877,
   },
   {
     eventId: 15,
@@ -264,7 +264,7 @@ export const dummyEvents = [
     eventDescription: "Come and join us for this free event!",
     mainDescription:
       "Come to our legendary Summer Ball, music, dancing and live entertainment. Black tie dresscode",
-    img: "hhttps://www.crowboroughrugby.com/photos/1023832/26645309.html",
+    img: "https://knassets.sumsmanagement.com/summerball/2020/summerball_2020_hero.png",
     eventTags: ["18+", "parking"],
     date: "2022-08-09",
     time: "19:00:00",
@@ -272,8 +272,8 @@ export const dummyEvents = [
     organiser: 9,
     email: "wrufc@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.9971022,
-    lng: -0.1060281,
+    lat: 51.526666307430276,
+    lng: - 0.14759037592769547,
   },
   {
     eventId: 16,
@@ -289,8 +289,8 @@ export const dummyEvents = [
     organiser: 8,
     email: "peppaplaygroup@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.99710225,
-    lng: -0.106028076,
+    lat: 51.53459707108816,
+    lng: - 0.045397136372201795,
   },
   {
     eventId: 17,
@@ -306,8 +306,8 @@ export const dummyEvents = [
     organiser: 7,
     email: "deli_belly@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.9971022,
-    lng: -0.1060281,
+    lat: 51.50094190791909,
+    lng: - 0.07632737752346544,
   },
   {
     eventId: 18,
@@ -323,8 +323,8 @@ export const dummyEvents = [
     organiser: 6,
     email: "wwbb@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.99710225,
-    lng: -0.106028076,
+    lat: 51.49292030171042,
+    lng: - 0.05163447441801893,
   },
   {
     eventId: 19,
@@ -332,7 +332,7 @@ export const dummyEvents = [
     eventDescription: "Come and join us for this free event!",
     mainDescription:
       "Come and sample our addictive Panic Room experience. Problem-solving under pressure, teamwork and lots of fun!",
-    img: "https://scontent.fbhx4-2.fna.fbcdn.net/v/t39.30808-6/296488218_2075755299293369_9045483699017589306_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=GIymdTaTDdkAX_81pPo&_nc_ht=scontent.fbhx4-2.fna&oh=00_AT-FkiXLJadrFXMUySufWYMrXXTQtbWNI7dQ8CNxbFaYCw&oe=62E98867",
+    img: "https://loveincorporated.blob.core.windows.net/contentimages/gallery/fd96b47a-8f43-46b4-9cf5-77448bf1a977-luxury-panic-rooms-nyc-dark-room.jpg",
     eventTags: ["parking", "kids"],
     date: "2022-08-09",
     time: "17:00:00",
@@ -340,8 +340,8 @@ export const dummyEvents = [
     organiser: 6,
     email: "panic@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.99710225,
-    lng: -0.106028076,
+    lat: 51.51151086470645,
+    lng: - 0.05493062328258618,
   },
   {
     eventId: 20,
@@ -357,8 +357,8 @@ export const dummyEvents = [
     organiser: 7,
     email: "medbar@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.9971025,
-    lng: -0.10602809,
+    lat: 51.51337571996228,
+    lng: - 0.04024777834042298,
   },
   {
     eventId: 21,
@@ -374,8 +374,8 @@ export const dummyEvents = [
     organiser: 7,
     email: "klassix@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.99710275,
-    lng: -0.106028078,
+    lat: 51.515862074885604,
+    lng: - 0.051534591119092664,
   },
   {
     eventId: 22,
@@ -385,14 +385,14 @@ export const dummyEvents = [
       "Come to our popular singles night and get free registration for our fantastic dating service",
     img: "https://cdn.pixabay.com/photo/2016/11/08/06/45/couple-1807617_1280.jpg",
     eventTags: ["18+", "parking"],
-    date: "2022-08-09",
+    date: "2022-08-30",
     time: "20:00:00",
     rating: 4,
     organiser: 8,
     email: "d8night@gmail.com",
     address: "24 Folders Lane",
-    lat: 50.99710225,
-    lng: -0.106028076,
+    lat: 51.50342894308421,
+    lng: - 0.062321987403130934,
   }
 
 ];
