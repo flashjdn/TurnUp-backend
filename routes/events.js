@@ -7,7 +7,7 @@ import {
   createEvent,
   deleteEvent,
 } from "../models/events.js";
-import { getEventTags } from "../models/events_tags.js";
+import { getEventTags, createEventTags } from "../models/events_tags.js";
 import {
   getEventOrganiserById,
   getUserById,
