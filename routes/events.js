@@ -6,6 +6,7 @@ import {
   getAttendedEvents,
   createEvent,
   deleteEvent,
+  createUserEvents,
 } from "../models/events.js";
 import { getEventTags, createEventTags } from "../models/events_tags.js";
 import {
