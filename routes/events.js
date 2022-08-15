@@ -142,7 +142,7 @@ router.post("/all", async function (req, res) {
   res.json(responseObject);
 });
 
-router.post("/att", async function (req, res) {
+router.post("/newatt", async function (req, res) {
   console.log(req);
   let data = await createUserEvents(req.body);
   const responseObject = {
