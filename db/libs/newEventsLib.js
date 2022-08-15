@@ -377,7 +377,7 @@ export const dummyEvents = [
     eventDescription: "Unforgettable experience with Ba'al Jumanji awaits you.",
     mainDescription:
       "Over the coming months I will be holding space to share loving kindness meditations along with new skills and empowerment tools to help in dealing with PTSD, Anxiety, depression, fear & childhood traumas.During our deep loving kindness global meditation sessions together, I will be teaching the power of mindfulness & new integration tools that we can all use on a daily basis starting with the power of intentions and breath work.",
-    img: "https://cdn.pixabay.com/photo/2016/11/08/06/45/couple-1807617_1280.jpg",
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2Fa%2Fb%2Fa%2F574754.jpg&f=1&nofb=1",
     date: "2022-08-17",
     time: "20:00:00",
     rating: 4,
@@ -394,7 +394,7 @@ export const dummyEvents = [
       "Exploring the potential within African Tourism and Tech sector!",
     mainDescription:
       "Technology has always been an important component in the global economy. It has however become a strategic imperative due to the emergence and the rise of the tech-savvy, connected consumers across global and national socioeconomic landscapes and sectors. Even though this has immense potential to create value, unlock broader societal benefits and change negative perceptions about Africa, its adoption in many African tourist destinations lags behind compared to international good practices. Contextually, this challenge differs from country to country, but it remains a major inhibitor to a competitive African Tourism Industry and that is the gap Tourism and Technology Summit Africa aims to close",
-    img: "https://cdn.pixabay.com/photo/2016/11/08/06/45/couple-1807617_1280.jpg",
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Folatorera.com%2Fwp-content%2Fuploads%2F2018%2F07%2Ftech-1.jpg&f=1&nofb=1",
     date: "2022-08-30",
     time: "20:00:00",
     rating: 4,
@@ -410,7 +410,7 @@ export const dummyEvents = [
     eventDescription: "Unleash your inner poet with this magnificent event!",
     mainDescription:
       "Whoever you are and whatever your relationship with poetry, we'd love you to join us. Following on from an incredible series of poetry and spoken word workshops with Mike Tyson, through The Puncheth Centre, several of us enjoyed the community so much that we've decided to continue the sessions. Poet Clare Nett opens the session with a wellbeing check-in and freewrite, and Poet Gump brings poems, artwork and prompts for inspiration. There's no pressure to share what you write, so feel free to just come along and see how you like it!",
-    img: "https://cdn.pixabay.com/photo/2016/11/08/06/45/couple-1807617_1280.jpg",
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs-i.huffpost.com%2Fgen%2F1969365%2Fimages%2Fo-POETRY-facebook.jpg&f=1&nofb=1",
     date: "2022-10-05",
     time: "20:00:00",
     rating: 4,
@@ -426,7 +426,7 @@ export const dummyEvents = [
     eventDescription: "If knitting is your passion, come and join us!",
     mainDescription:
       "Knitting is what we are about. We pass on tips, show what we are doing and learn new techniques at the same time. So wherever you are in the world, if you can knit join. We are a happy friendly bunch. However we are not teaching how to knit, you must be able to knit. I run this group for free giving my time, even though I am a busy working person. ",
-    img: "https://cdn.pixabay.com/photo/2016/11/08/06/45/couple-1807617_1280.jpg",
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thesprucecrafts.com%2Fthmb%2FgIe1uZhXeJ2nGjQmwYzsuhbIjBQ%3D%2F1944x1314%2Ffilters%3Afill(auto%2C1)%2FKnittingneedles-twenty20_694fd8de-1dc0-4c41-bee9-d0154e6a93cc-594895315f9b58d58a786663.jpg&f=1&nofb=1",
     date: "2022-09-02",
     time: "20:00:00",
     rating: 4,
