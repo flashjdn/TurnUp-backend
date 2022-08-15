@@ -28,7 +28,7 @@ export async function createEventTags(request) {
         VALUES 
         ($1, $2) 
         RETURNING *;`,
-    [request.eventId, request.tagId]
+    [request.eventid, request.tagid]
   );
   return result.rows;
 }
