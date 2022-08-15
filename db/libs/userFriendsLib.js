@@ -24,6 +24,14 @@ const userFriendsLib = [
   { friend1: 9, friend2: 1 },
   { friend1: 9, friend2: 4 },
   { friend1: 10, friend2: 2 },
+  { friend1: 29, friend2: 28 },
+  { friend1: 29, friend2: 17 },
+  { friend1: 29, friend2: 12 },
+  { friend1: 27, friend2: 12 },
+  { friend1: 27, friend2: 3 },
+  { friend1: 27, friend2: 18 },
+  { friend1: 26, friend2: 5 },
+  { friend1: 26, friend2: 6 },
 ];
 
 export default userFriendsLib;
