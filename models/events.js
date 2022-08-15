@@ -86,6 +86,23 @@ export async function createEvent(request) {
   return result.rows;
 }
 
+export async function createUserEvents(request) {
+  console.log(request);
+
+  const result = await query(
+    `
+        INSERT INTO userEvents 
+        (userId,
+          eventid
+        )
+        VALUES 
+        ($1, $2) 
+        RETURNING *;`,
+    [request.userid, request.eventid]
+  );
+  return result.rows;
+}
+
 // ************** Delete Request **************************************
 export async function deleteEvent(eventId) {
   const result = await query(

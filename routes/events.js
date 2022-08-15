@@ -141,6 +141,18 @@ router.post("/all", async function (req, res) {
   res.json(responseObject);
 });
 
+router.post("/att", async function (req, res) {
+  console.log(req);
+  let data = await createUserEvents(req.body);
+  const responseObject = {
+    success: true,
+    message: "userEvent created",
+    payload: data,
+  };
+  //console.log(responseObject);
+  res.json(responseObject);
+});
+
 router.post("/user", async function (req, res) {
   console.log(req);
   let data = await createUser(req.body);
