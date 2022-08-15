@@ -15,3 +15,20 @@ export async function getEventTags(eventId) {
   );
   return result.rows;
 }
+
+export async function createEventTags(request) {
+  console.log(request);
+
+  const result = await query(
+    `
+        INSERT INTO eventTags 
+        (tagId,
+          eventId
+        )
+        VALUES 
+        ($1, $2) 
+        RETURNING *;`,
+    [request.eventId, request.tagId]
+  );
+  return result.rows;
+}

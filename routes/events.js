@@ -153,6 +153,18 @@ router.post("/user", async function (req, res) {
   res.json(responseObject);
 });
 
+router.post("/eventTags", async function (req, res) {
+  console.log(req);
+  let data = await createEventTags(req.body);
+  const responseObject = {
+    success: true,
+    message: "EventTags created",
+    payload: data,
+  };
+  //console.log(responseObject);
+  res.json(responseObject);
+});
+
 router.delete("/:id", async function (req, res) {
   let data = await deleteEvent(req.params.id);
   const responseObject = {

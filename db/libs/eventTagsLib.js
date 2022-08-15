@@ -48,6 +48,8 @@ const eventTagsLib = [
   { tagId: 2, eventId: 14 },
   { tagId: 5, eventId: 10 },
   { tagId: 6, eventId: 16 },
+  { tagId: 7, eventId: 16 },
+  { tagId: 4, eventId: 16 },
   { tagId: 3, eventId: 17 },
   { tagId: 2, eventId: 17 },
   { tagId: 1, eventId: 17 },
@@ -77,6 +79,9 @@ const eventTagsLib = [
   { tagId: 2, eventId: 26 },
   { tagId: 5, eventId: 26 },
   { tagId: 6, eventId: 26 },
+  { tagId: 6, eventId: 27 },
+  { tagId: 1, eventId: 27 },
+  { tagId: 7, eventId: 27 },
 ];
 
 export default eventTagsLib;
