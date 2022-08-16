@@ -64,10 +64,11 @@ export async function createEvent(request) {
           lng, 
           address, 
           img, 
-          email
+          email,
+          rating
         )
         VALUES 
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 ) 
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, 12 ) 
         RETURNING *;`,
     [
       request.eventName,
@@ -81,6 +82,7 @@ export async function createEvent(request) {
       request.address,
       request.img,
       request.email,
+      request.rating,
     ]
   );
   return result.rows;
