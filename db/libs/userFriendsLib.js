@@ -24,7 +24,7 @@ const userFriendsLib = [
   { friend1: 9, friend2: 1 },
   { friend1: 9, friend2: 4 },
   { friend1: 10, friend2: 2 },
-  { friend1: 29, friend2: 28 },
+  { friend1: 29, friend2: 22 },
   { friend1: 29, friend2: 17 },
   { friend1: 29, friend2: 12 },
   { friend1: 27, friend2: 12 },
@@ -49,7 +49,7 @@ const userFriendsLib = [
   { friend1: 32, friend2: 10 },
   { friend1: 32, friend2: 12 },
   { friend1: 32, friend2: 9 },
-  { friend1: 32, friend2: 27 },
+  { friend1: 32, friend2: 26 },
   { friend1: 32, friend2: 25 },
   { friend1: 32, friend2: 3 },
 ];
