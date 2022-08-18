@@ -5,7 +5,7 @@ import { query } from "../db/index.js";
 export async function getEventTags(eventId) {
   const result = await query(
     `
-    SELECT eventTags.eventTagId, tags.tagId, tags.tagName
+    SELECT eventTags.eventTagId, eventTags.eventId, tags.tagId, tags.tagName
     FROM eventTags
     INNER JOIN tags
     ON eventTags.tagId = tags.tagId
