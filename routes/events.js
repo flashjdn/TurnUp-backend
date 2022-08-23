@@ -179,7 +179,7 @@ router.post("/eventTags", async function (req, res) {
   res.json(responseObject);
 });
 
-/* _______________________________________POST REQUESTS_________________________________________*/
+/* _______________________________________DELETE REQUESTS_________________________________________*/
 
 router.delete("/deluserev", async function (req, res) {
   let data = await deleteUserEvent(req.body);
