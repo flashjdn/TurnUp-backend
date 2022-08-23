@@ -7,6 +7,7 @@ import {
   createEvent,
   deleteEvent,
   createUserEvents,
+  deleteUserEvent,
 } from "../models/events.js";
 import { getEventTags, createEventTags } from "../models/events_tags.js";
 import {
@@ -172,6 +173,19 @@ router.post("/eventTags", async function (req, res) {
   const responseObject = {
     success: true,
     message: "EventTags created",
+    payload: data,
+  };
+  //console.log(responseObject);
+  res.json(responseObject);
+});
+
+/* _______________________________________POST REQUESTS_________________________________________*/
+
+router.delete("/deluserev", async function (req, res) {
+  let data = await deleteUserEvent(req.body);
+  const responseObject = {
+    success: true,
+    message: "Event deleted",
     payload: data,
   };
   //console.log(responseObject);

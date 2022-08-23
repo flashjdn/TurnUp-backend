@@ -105,6 +105,19 @@ export async function createUserEvents(request) {
   return result.rows;
 }
 
+export async function deleteUserEvent(body) {
+  const result = await query(
+    `
+        DELETE FROM userEvents
+        WHERE eventId = $1 AND userId= $2;`,
+    [body.eventId, body.userId]
+  );
+  if (result.rowCount === 0) {
+    return `No userEvent found with ID: ${eventId}`;
+  }
+  return result.command;
+}
+
 // ************** Delete Request **************************************
 export async function deleteEvent(eventId) {
   const result = await query(
