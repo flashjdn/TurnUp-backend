@@ -106,7 +106,7 @@ export async function createUserEvents(request) {
 }
 
 export async function deleteUserEvent(body) {
-  console.log("eventid: ", body.eventid, "userid:", body.userid);
+  console.log("eventid: ", body, "userid:", body.userid);
   const result = await query(
     `
         DELETE FROM userEvents
