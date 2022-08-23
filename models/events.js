@@ -110,10 +110,10 @@ export async function deleteUserEvent(body) {
     `
         DELETE FROM userEvents
         WHERE eventId = $1 AND userId= $2;`,
-    [body.eventId, body.userId]
+    [body.eventid, body.userid]
   );
   if (result.rowCount === 0) {
-    return `No userEvent found with ID: ${eventId}`;
+    return `No userEvent found with userId: ${body.userid}`;
   }
   return result.command;
 }
