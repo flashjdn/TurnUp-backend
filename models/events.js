@@ -104,7 +104,7 @@ export async function createUserEvents(request) {
   );
   return result.rows;
 }
-
+// ************** Delete Request **************************************
 export async function deleteUserEvent(body) {
   console.log("eventid: ", body, "userid:", body.userid);
   const result = await query(
@@ -119,7 +119,19 @@ export async function deleteUserEvent(body) {
   return result.command;
 }
 
-// ************** Delete Request **************************************
+export async function deleteUserEventsByEventId(eventId) {
+  const result = await query(
+    `
+        DELETE FROM userEvents
+        WHERE eventId = $1;`,
+    [eventId]
+  );
+  if (result.rowCount === 0) {
+    return `No userEvent found with userId: ${eventId}`;
+  }
+  return result.command;
+}
+
 export async function deleteEvent(eventId) {
   const result = await query(
     `

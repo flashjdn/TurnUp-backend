@@ -32,3 +32,18 @@ export async function createEventTags(request) {
   );
   return result.rows;
 }
+
+export async function deleteTagsByEvent(eventId) {
+  const result = await query(
+    `
+        DELETE FROM eventTags
+        WHERE eventId = $1;`,
+    [eventId]
+  );
+  if (result.rowCount === 0) {
+    return `No tags found with ID: ${eventId}`;
+  }
+  return result.command;
+}
+
+deleteTagsByEvent;
