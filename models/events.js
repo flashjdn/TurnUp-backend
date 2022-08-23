@@ -106,10 +106,11 @@ export async function createUserEvents(request) {
 }
 
 export async function deleteUserEvent(body) {
+  console.log("eventid: ", body.eventid, "userid:", body.userid);
   const result = await query(
     `
         DELETE FROM userEvents
-        WHERE eventId = $1 AND userId= $2;`,
+        WHERE eventId = $1 AND userId = $2;`,
     [body.eventid, body.userid]
   );
   if (result.rowCount === 0) {
