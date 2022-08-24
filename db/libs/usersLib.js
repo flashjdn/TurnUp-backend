@@ -132,9 +132,39 @@ const userLib = [
     email: "sasha@hotmail.com",
   },
   {
-    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpiximus.net%2Fmedia2%2F45195%2Fprofile-pictures-from-russian-social-networks-that-will-make-you-cringe-20.jpg&f=1&nofb=1",
-    userName: "Blueberry1",
-    email: "sasha@hotmail.com",
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-images-1.medium.com%2Fmax%2F2600%2F1*0M5C9pkPsd721QBHpBZoiA.jpeg&f=1&nofb=1",
+    userName: "dajuiceman",
+    email: "oj@microsoft.com",
+  },
+  {
+    img: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-s4neYEmK5tU%2FTrzBgT0Xz2I%2FAAAAAAAAH_U%2FOZtIxBQltRU%2Fs1600%2Fdrunk22.jpg&f=1&nofb=1",
+    userName: "ruedogg",
+    email: "ram@gmail.com",
+  },
+  {
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdm0qx8t0i9gc9.cloudfront.net%2Fthumbnails%2Fvideo%2FSks4W_9Alj1v0vmgb%2Fvideoblocks-young-beautiful-business-woman-smoking-a-cigarette-in-the-park-autumn-background_rho2krxlf_thumbnail-1080_01.png&f=1&nofb=1",
+    userName: "baaldlam",
+    email: "angelina@hotmail.com",
+  },
+  {
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAATXAJy3vmY5uYuadYbWkzDZ1n7-2c7IJe5xLJw3GQ%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1",
+    userName: "davestrod",
+    email: "d.marr@gmail.com",
+  },
+  {
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdm0qx8t0i9gc9.cloudfront.net%2Fthumbnails%2Fvideo%2FSks4W_9Alj1v0vmgb%2Fvideoblocks-young-beautiful-business-woman-smoking-a-cigarette-in-the-park-autumn-background_rho2krxlf_thumbnail-1080_01.png&f=1&nofb=1",
+    userName: "AHOY9099",
+    email: "ahoy@hotmail.com",
+  },
+  {
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhowtoapps.com%2Fwp-content%2Fuploads%2F2020%2F01%2F9b658842-funny-profile-pic-12.jpg&f=1&nofb=1",
+    userName: "AwpTicTech",
+    email: "lullul@hotmail.com",
+  },
+  {
+    img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgur.com%2FKUngZ7V.jpg&f=1&nofb=1",
+    userName: "BayouShrek",
+    email: "Bayo@microsoft.com",
   },
 ];
 

@@ -82,6 +82,22 @@ const eventTagsLib = [
   { tagId: 6, eventId: 27 },
   { tagId: 1, eventId: 27 },
   { tagId: 7, eventId: 27 },
+  { tagId: 7, eventId: 28 },
+  { tagId: 3, eventId: 28 },
+  { tagId: 1, eventId: 28 },
+  { tagId: 1, eventId: 29 },
+  { tagId: 2, eventId: 29 },
+  { tagId: 3, eventId: 29 },
+  { tagId: 3, eventId: 30 },
+  { tagId: 2, eventId: 30 },
+  { tagId: 5, eventId: 30 },
+  { tagId: 1, eventId: 31 },
+  { tagId: 4, eventId: 31 },
+  { tagId: 6, eventId: 31 },
+  { tagId: 1, eventId: 32 },
+  { tagId: 2, eventId: 32 },
+  { tagId: 7, eventId: 32 },
+  //32 events
 ];
 
 export default eventTagsLib;
