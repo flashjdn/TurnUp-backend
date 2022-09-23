@@ -20,8 +20,12 @@ $ Clone this repository
 $ Create a .env file inside the main folder of the app.
 $ In the .env file you will need the following variables with corresponding values from your database credentials (we recommend heroku as the database provider): 
  - PORT: 3000
- - XXXXXXXXXXXXX
- - XXXXXXXXXXXXX
+ - PGUSER=xxxxxxxxxxxxxx
+ - PGHOST=xxx-xx-xxx-xx-xxx.xx-xxxxt-x.xxxxx.xxxxx.xxx
+ - PGPORT=xxxx
+ - PGPASSWORD=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ - PGDATABASE=xxxxxxxxxxx
+
 $ run "npm i" in the console to download the necessary npm packages
 ```
 
@@ -50,3 +54,6 @@ Any feedback is appreciated. If you have any questions, get in touch with the te
 [Simon Bowen](https://github.com/sibowen535)
 [Owen Bovill](https://github.com/OwenB-HamD)
 [Patryk Kielsa](https://github.com/MightyKielsa)
+
+
+FRONTEND REPO: https://github.com/SchoolOfCode/final-project_front-end-slack-ops
